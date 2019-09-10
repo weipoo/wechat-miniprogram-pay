@@ -28,10 +28,10 @@ python -m SimpleHTTPServer
 ![](https://github.com/weipoo/wechat-miniprogram-pay/blob/master/images/demo-01.jpg)
 
 2. 进入微信支付h5页面，校验访问环境是否为微信小程序访问，若是则处理微信支付参数传递跳转微信支付页面；
-![](https://github.com/weipoo/wechat-miniprogram-pay/blob/master/images/demo-01.jpg)
+![](https://github.com/weipoo/wechat-miniprogram-pay/blob/master/images/demo-02.jpg)
 
 3. 来到微信支付页面，执行微信支付。
-![](https://github.com/weipoo/wechat-miniprogram-pay/blob/master/images/demo-01.jpg)
+![](https://github.com/weipoo/wechat-miniprogram-pay/blob/master/images/demo-03.jpg)
 
 
 
