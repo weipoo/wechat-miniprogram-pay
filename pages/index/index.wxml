@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="usermotto" bindtap="openPayPage">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view>

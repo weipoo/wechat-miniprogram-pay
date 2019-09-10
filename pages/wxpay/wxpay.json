@@ -1,0 +1,6 @@
+{
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "小程序调用微信支付页",
+  "usingComponents": {}
+}
