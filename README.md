@@ -7,33 +7,33 @@
 
 2. 解决办法：
 
-* 将下面的微信小程序调用[微信支付业务代码]()放入支付发起页面中
+* 将下面的微信小程序调用[微信支付业务代码](https://github.com/weipoo/wechat-miniprogram-pay/blob/master/pay-h5-demo/index.html)放入支付发起页面中;
+![](https://github.com/weipoo/wechat-miniprogram-pay/blob/master/images/code-01.jpg)
 
+* 修改微信支付业务代码参数（时间戳、随机串、prepay_id、签名方式、支付签名等）；
+![](https://github.com/weipoo/wechat-miniprogram-pay/blob/master/images/code-02.jpg)
+
+* 页面校验一下params参数数据拼接正常就行，后面的小程序这边会做校验；
+![](https://github.com/weipoo/wechat-miniprogram-pay/blob/master/images/code-03.jpg)
+
+* 启动index.html页面作为网站；（也可以直接放到你自己的网站上，这里采用python指令本地化启动模拟网站）
+```
+python -m SimpleHTTPServer
+```
+![](https://github.com/weipoo/wechat-miniprogram-pay/blob/master/images/code-04.jpg)
+
+
+#### 测试最终结果
+1. 在微信小程序中点击访问目标微信支付页面；
+![](https://github.com/weipoo/wechat-miniprogram-pay/blob/master/images/demo-01.jpg)
+
+2. 进入微信支付h5页面，校验访问环境是否为微信小程序访问，若是则处理微信支付参数传递跳转微信支付页面；
+![](https://github.com/weipoo/wechat-miniprogram-pay/blob/master/images/demo-01.jpg)
+
+3. 来到微信支付页面，执行微信支付。
 ![](https://github.com/weipoo/wechat-miniprogram-pay/blob/master/images/demo-01.jpg)
 
 
 
 
-**页面启动静态网站方式：**
-`python -m SimpleHTTPServer`
-
-访问h5页面配置：
-
-
-```
-let wechatPay = {
-      used: true, // 使用微信支付页面
-      payWebShowed: false, // 浏览支付页
-      cecursWebShowed: false // 浏览支付校验页
-    };
-    globalData.wechatPay = wechatPay;
-    
-    let path='http://172.16.8.12:8000/';
-    wx.navigateTo({
-          url: sdk.urlJoinParams('/pages/gsd-ui/g-web-page/g-web-page', {
-            h5Url: encodeURIComponent(path),
-            title: '微信支付h5'
-          })
-    });
-```
 
