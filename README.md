@@ -7,6 +7,10 @@
 
 2. 解决办法：
 
+* 将下面的微信小程序调用[微信支付业务代码]()放入支付发起页面中
+
+![](https://github.com/weipoo/wechat-miniprogram-pay/blob/master/images/demo-01.jpg)
+
 
 
 

@@ -1,0 +1,45 @@
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<header></header>
+<body>
+<p>微信支付发起页面</p>
+<!-- 引入jssdk文件 -->
+<script src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script> 
+
+<script type="text/javascript">
+
+
+	// web-view下的页面内
+	function ready() {
+		// 模拟微信支付参数 根据真实变量值修改
+		var timeStamp = '1559199540';							// 时间戳
+		var nonceStr = '2476489fb1b544b4ad927df8b9d1e94f';	    // 随机串
+		var prepayId = 'wx301459009246910cdb5cff1d9857252700';  // 统一下单接口返回的 prepay_id 参数值
+		var signType = 'RSA';                                   // 签名方式
+		var paySign = '2Q0RPdrid3VJHwOIeb8hDGDWhCjnh2ROrd7iC/xd8BgNFZMJaw6enDW1wrIldUFjc/yNu73Rm2Ay+qC4haq9wZbidSVId4XrJ/7XVxrYQYyK4/83S2YzPv9NYPSEAgLo3EGj4aiIEcg54BPrRldnjK9cYwDc0POsgYaossb26xagg8ubaemWn2Ig6AfATGV4Blq50AvIuJ5UeH5sp8JeTM/O7LurWoSKDE0lF/8ntMXKGxwZbIRkOSycnSYTCzHJ6VNJ/Swx/dzzBB6Ol5+SjNKz6ERiJloaEfMw/OE+0DoLIrST7O8nC3vERhu8G3ZuB+Ro9YuXkwCmK4BWeB16VQ==';       // 支付签名
+
+		// alert(window.__wxjs_environment === 'miniprogram');
+		if(window.__wxjs_environment === 'miniprogram'){
+			//执行微信支付后，调取统一下单接口生成微信小程序支付需要的支付参数
+			var params = '?timestamp=' + timeStamp + '&nonceStr=' + nonceStr
+			             +'&prepayId='+ prepayId +'&signType=' + signType
+			             +'&paySign=' + paySign;
+			//定义path 与小程序的支付页面的路径相对应
+			var path = '/pages/wxpay/wxpay'+params;
+			//通过JSSDK的api使小程序跳转到指定的小程序支付页面
+			wx.miniProgram.navigateTo({url: path}); 
+		}
+	  
+	}
+	if (!window.WeixinJSBridge || !WeixinJSBridge.invoke) {
+		// alert('没有进入小程序miniprogram');
+	  document.addEventListener('WeixinJSBridgeReady', ready, false)
+	} else {
+		// alert('进入小程序miniprogram');
+	  ready()
+	}
+</script>
+</body>
+</html>
+
+
