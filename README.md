@@ -1,12 +1,10 @@
 ### 微信小程序调用微信支付的解决方案demo
 #### 需要解决的问题：
 通过h5访问的形式访问目标支付网站后发起小程序微信支付。
-#### 解决的方案与解决方法：
-1. 解决方案：
+#### 解决方案：
 在最终调用统一支付域名下的页面中添加**微信小程序调用微信支付业务代码**（自己写好后给到目标网页，下面会给出示例），代码将会判定当前访问环境是否为小程序，如果判定为小程序访问环境的话，将会把调用微信支付的参数传递到小程序具体支付页面来发起微信支付，该方案适用于所有小程序调用微信支付，也方便后期扩展更多小程序业务。
-
-2. 解决办法：      
-1）**微信小程序端：**    
+#### 解决办法：
+1. **微信小程序端：**    
 ```
 目录结构
 project-name
@@ -20,8 +18,8 @@ project-name
 └── project.config.json     // 小程序配置文件 
 ```   
 [微信支付小程序源码Demo](https://github.com/weipoo/wechat-miniprogram-pay/tree/master/miniprogram-demo)
-2）**h5端：**
 
+2. **h5端：**
 
 * 将下面的微信小程序调用[微信支付业务代码](https://github.com/weipoo/wechat-miniprogram-pay/blob/master/pay-h5-demo/index.html)放入支付发起页面中;
 ![](https://github.com/weipoo/wechat-miniprogram-pay/blob/master/images/code-01.jpg)
