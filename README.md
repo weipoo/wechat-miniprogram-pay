@@ -34,7 +34,7 @@ project-name
 ```
 python -m SimpleHTTPServer
 ```
-![](https://github.com/weipoo/wechat-miniprogram-pay/blob/master/images/code-04.jpg)
+![](https://github.com/weipoo/wechat-miniprogram-pay/blob/master/images/code-04.png)
 
 
 #### 测试最终结果
